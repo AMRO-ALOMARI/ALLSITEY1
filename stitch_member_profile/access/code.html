@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ALLSITEY – Access</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#8B0000",
+                        "ivory": "#F5F5F5",
+                        "silver": "#C0C0C0",
+                        "background-light": "#050505",
+                        "background-dark": "#000000",
+                        "subtle-gray": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        widest: '.25em',
+                        mega: '.5em',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'flicker': 'flicker 3s linear infinite',
+                    },
+                    keyframes: {
+                        flicker: {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: 0.8 },
+                            '52%': { opacity: 0.1 },
+                            '54%': { opacity: 1 },
+                        }
+                    }
+                },
+            },
+        };
+    </script>
+<style>.noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.03;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .cursor-follow {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(139, 0, 0, 0.15) 0%, rgba(0,0,0,0) 70%);
+            position: fixed;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            transition: opacity 0.3s ease;
+        }input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
+        input:-webkit-autofill:active{
+            -webkit-box-shadow: 0 0 0 30px #050505 inset !important;
+            -webkit-text-fill-color: #F5F5F5 !important;
+            transition: background-color 5000s ease-in-out 0s;
+        }.red-glow-text {
+            text-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-ivory font-sans antialiased min-h-screen flex flex-col items-center justify-center overflow-hidden selection:bg-primary selection:text-white transition-colors duration-500">
+<div class="noise-overlay"></div>
+<div class="cursor-follow" id="glow"></div>
+<div class="fixed inset-0 pointer-events-none z-0 opacity-10 dark:opacity-20 flex justify-center items-center">
+<div class="w-[1px] h-screen bg-silver absolute left-10"></div>
+<div class="w-[1px] h-screen bg-silver absolute right-10"></div>
+<div class="w-screen h-[1px] bg-silver absolute top-10"></div>
+<div class="w-screen h-[1px] bg-silver absolute bottom-10"></div>
+<div class="absolute top-10 left-10 w-4 h-4 border-l border-t border-silver"></div>
+<div class="absolute top-10 right-10 w-4 h-4 border-r border-t border-silver"></div>
+<div class="absolute bottom-10 left-10 w-4 h-4 border-l border-b border-silver"></div>
+<div class="absolute bottom-10 right-10 w-4 h-4 border-r border-b border-silver"></div>
+</div>
+<main class="relative z-20 w-full max-w-2xl px-6 flex flex-col items-center text-center space-y-12">
+<div class="mb-8 group">
+<div class="relative w-32 h-32 md:w-40 md:h-40 mx-auto transition-transform duration-700 group-hover:scale-105">
+<img alt="ALLSITEY Eye" class="w-full h-full object-contain invert opacity-90 hover:opacity-100 transition-opacity duration-500 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]" src="screen.png"/>
+</div>
+<h1 class="mt-6 text-3xl md:text-4xl font-light tracking-[0.5em] text-ivory uppercase opacity-90">
+                ALLSITEY
+            </h1>
+</div>
+<div class="space-y-4 max-w-lg mx-auto">
+<p class="text-sm md:text-base text-silver font-light tracking-widest uppercase leading-relaxed animate-pulse-slow">
+                Access is not requested.<br/>
+<span class="text-white font-normal red-glow-text">It is granted retroactively.</span>
+</p>
+</div>
+<form class="w-full max-w-md mx-auto space-y-8 mt-12" id="observationForm" onsubmit="handleSubmit(event)">
+<div class="relative group">
+<input autocomplete="off" class="block w-full bg-transparent border-0 border-b border-gray-400 dark:border-gray-700 text-center text-black dark:text-ivory text-lg tracking-[0.2em] placeholder-gray-400 dark:placeholder-gray-600 focus:border-primary dark:focus:border-primary focus:ring-0 transition-all duration-300 py-4 uppercase font-light" id="identifier" name="identifier" placeholder="[ ENTER IDENTIFIER ]" required="" type="text"/>
+<div class="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-700 group-hover:w-full group-focus-within:w-full"></div>
+</div>
+<div class="h-6 text-primary text-xs tracking-widest uppercase opacity-0 transition-opacity duration-500 font-medium" id="statusMessage">
+                Identifier recorded.
+            </div>
+<button class="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium tracking-widest text-white transition duration-300 ease-out border border-transparent hover:border-primary bg-primary shadow-[0_0_15px_rgba(139,0,0,0.3)] hover:shadow-[0_0_25px_rgba(139,0,0,0.6)] w-full md:w-auto" type="submit">
+<span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-black group-hover:translate-x-0 ease">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</span>
+<span class="absolute flex items-center justify-center w-full h-full text-white transition-all duration-300 transform group-hover:translate-x-full ease text-xs md:text-sm uppercase">SUBMIT TO OBSERVATION</span>
+<span class="relative invisible text-xs md:text-sm uppercase">SUBMIT TO OBSERVATION</span>
+</button>
+</form>
+<footer class="fixed bottom-10 text-center w-full left-0 pointer-events-none">
+<div class="text-[10px] uppercase tracking-[0.3em] text-gray-600 flex flex-col items-center gap-2">
+<span class="animate-pulse">Subject: Under Observation</span>
+<span class="text-[8px]">ALLSITEY SEES.</span>
+</div>
+</footer>
+</main>
+<script>
+        // Mouse follow effect for the red glow
+        const glow = document.getElementById('glow');
+        document.addEventListener('mousemove', (e) => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+        // Form handling
+        const form = document.getElementById('observationForm');
+        const input = document.getElementById('identifier');
+        const statusMsg = document.getElementById('statusMessage');
+        function handleSubmit(e) {
+            e.preventDefault();
+            // Lock input
+            input.setAttribute('readonly', true);
+            input.classList.add('opacity-50', 'cursor-not-allowed');
+            // Change status message
+            statusMsg.textContent = "Identifier recorded.";
+            statusMsg.classList.remove('opacity-0');
+            statusMsg.classList.add('text-primary', 'animate-pulse');
+        }
+        document.documentElement.classList.add('dark');
+    </script>
+
+</body></html>

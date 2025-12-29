@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ALLSITEY – Members</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&amp;family=Cinzel:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#8B0000",
+                        secondary: "#C0C0C0",
+                        "background-light": "#050505",
+                        "background-dark": "#000000",
+                        "surface-dark": "#0a0a0a",
+                        "ivory": "#FFFFF0",
+                    },
+                    fontFamily: {
+                        display: ["'Montserrat'", "sans-serif"],
+                        serif: ["'Cinzel'", "serif"],
+                    },
+                    spacing: {
+                        '128': '32rem',
+                    },
+                    letterSpacing: {
+                        'widest-xl': '.25em',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'flicker': 'flicker 3s linear infinite',
+                    },
+                    keyframes: {
+                        flicker: {
+                            '0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%': { opacity: 0.99 },
+                            '20%, 21.999%, 63%, 63.999%, 65%, 69.999%': { opacity: 0.4 },
+                        }
+                    }
+                },
+            },
+        };
+    </script>
+<style>::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: url('screen.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.05;
+            z-index: 50;
+        }.glitch-hover:hover {
+            animation: glitch 1s linear infinite;
+        }
+        @keyframes glitch {
+            2%, 64% { transform: translate(2px,0) skew(0deg); }
+            4%, 60% { transform: translate(-2px,0) skew(0deg); }
+            62% { transform: translate(0,0) skew(5deg); }
+        }
+        .hover-reveal .reveal-text {
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .hover-reveal:hover .reveal-text {
+            opacity: 1;
+        }
+        .hover-reveal:hover .original-text {
+            opacity: 0.1;
+            filter: blur(2px);
+        }
+        .original-text {
+            transition: all 0.4s ease;
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-ivory font-display min-h-screen flex flex-col selection:bg-primary selection:text-white transition-colors duration-300">
+<div class="noise-overlay"></div>
+<header class="fixed w-full top-0 z-40 border-b border-gray-900 bg-background-dark/90 backdrop-blur-sm">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between text-[10px] tracking-[0.25em] uppercase">
+<div class="flex items-center gap-3">
+<span class="h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+<span class="opacity-60">Ten entities execute.</span>
+</div>
+<div class="flex items-center gap-6">
+<span class="opacity-40 cursor-pointer hover:text-primary transition-colors" id="to-eye">The Eye</span>
+<span class="opacity-40 cursor-pointer hover:text-primary transition-colors" id="to-access">Access</span>
+</div>
+</div>
+</header>
+<main class="flex-grow pt-28 pb-20 px-6 relative z-10">
+<div class="fixed inset-0 pointer-events-none z-0 opacity-[0.03] dark:opacity-[0.07]" style="background-image: linear-gradient(to right, #333 1px, transparent 1px), linear-gradient(to bottom, #333 1px, transparent 1px); background-size: 40px 40px;">
+</div>
+<div class="max-w-6xl mx-auto relative z-10">
+<div class="mb-16 flex flex-col md:flex-row justify-between items-end border-b border-gray-800 pb-6">
+<div>
+<h1 class="text-4xl md:text-6xl font-extralight tracking-[0.3em] mb-2 text-ivory uppercase">
+                        MEMBERS
+                    </h1>
+<p class="text-[10px] tracking-[0.25em] uppercase text-secondary">Code index: 01 – 10</p>
+</div>
+<div class="mt-6 md:mt-0 text-right text-[10px] uppercase tracking-[0.2em] text-secondary">
+<p>Images: None</p>
+<p>Names: Redacted</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-12 gap-y-16">
+<div class="group relative hover-reveal cursor-crosshair">
+<div class="absolute -left-4 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="border-t border-gray-800 pt-6 transition-all duration-500 group-hover:border-primary">
+<div class="flex justify-between items-start mb-6 original-text">
+<span class="text-3xl font-light text-gray-600 group-hover:text-primary transition-colors">01</span>
+<span class="h-2 w-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"></span>
+</div>
+<div class="space-y-4 original-text">
+<div>
+<h3 class="text-xl uppercase tracking-[0.15em] text-white font-medium">ENTITY_01</h3>
+<p class="text-[10px] tracking-widest text-gray-500 uppercase mt-1">Code Name: VOID WALKER</p>
+</div>
+<div class="grid grid-cols-2 gap-4 text-sm font-light">
+<div>
+<span class="block text-[10px] uppercase text-gray-500 tracking-widest mb-1">Function</span>
+<span class="text-gray-300">Psychological Dismantling</span>
+</div>
+<div>
+<span class="block text-[10px] uppercase text-gray-500 tracking-widest mb-1">Status</span>
+<span class="text-primary">Active</span>
+</div>
+</div>
+<div class="pt-4 border-t border-dashed border-gray-800 mt-4 flex justify-between items-center font-mono text-[10px] text-gray-500">
+<span>Last Signal: 00:04 ago</span>
+<span>Channel: Obsidian</span>
+</div>
+</div>
+<div class="reveal-text absolute inset-0 flex items-center justify-center pointer-events-none">
+<p class="text-primary uppercase tracking-[0.5em] text-xs font-bold animate-pulse">Data obeys silence.</p>
+</div>
+</div>
+</div>
+<div class="group relative hover-reveal cursor-crosshair">
+<div class="absolute -left-4 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="border-t border-gray-800 pt-6 transition-all duration-500 group-hover:border-primary">
+<div class="flex justify-between items-start mb-6 original-text">
+<span class="text-3xl font-light text-gray-600 group-hover:text-primary transition-colors">02</span>
+<span class="h-2 w-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"></span>
+</div>
+<div class="space-y-4 original-text">
+<div>
+<h3 class="text-xl uppercase tracking-[0.15em] text-white font-medium">ENTITY_02</h3>
+<p class="text-[10px] tracking-widest text-gray-500 uppercase mt-1">Code Name: SILENT WHISPER</p>
+</div>
+<div class="grid grid-cols-2 gap-4 text-sm font-light">
+<div>
+<span class="block text-[10px] uppercase text-gray-500 tracking-widest mb-1">Function</span>
+<span class="text-gray-300">Subliminal Insertion</span>
+</div>
+<div>
+<span class="block text-[10px] uppercase text-gray-500 tracking-widest mb-1">Status</span>
+<span class="text-primary">Active</span>
+</div>
+</div>
+<div class="pt-4 border-t border-dashed border-gray-800 mt-4 flex justify-between items-center font-mono text-[10px] text-gray-500">
+<span>Last Signal: 00:01 ago</span>
+<span>Channel: Obsidian</span>
+</div>
+</div>
+<div class="reveal-text absolute inset-0 flex items-center justify-center pointer-events-none">
+<p class="text-primary uppercase tracking-[0.5em] text-xs font-bold animate-pulse">Data obeys silence.</p>
+</div>
+</div>
+</div>
+<div class="group relative hover-reveal cursor-crosshair">
+<div class="absolute -left-4 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="border-t border-gray-800 pt-6 transition-all duration-500 group-hover:border-primary">
+<div class="flex justify-between items-start mb-6 original-text">
+<span class="text-3xl font-light text-gray-600 group-hover:text-primary transition-colors">03</span>
+<span class="h-2 w-2 rounded-full bg-red-500 animate-pulse shadow-[0_0_8px_rgba(239,68,68,0.6)]"></span>
+</div>
+<div class="space-y-4 original-text">
+<div>
+<h3 class="text-xl uppercase tracking-[0.15em] text-white font-medium">ENTITY_03</h3>
+<p class="text-[10px] tracking-widest text-gray-500 uppercase mt-1">Code Name: PATTERN EXTRACTION</p>
+</div>
+<div class="grid grid-cols-2 gap-4 text-sm font-light">
+<div>
+<span class="block text-[10px] uppercase text-gray-500 tracking-widest mb-1">Function</span>
+<span class="text-gray-300">Pattern Extraction</span>
+</div>
+<div>
+<span class="block text-[10px] uppercase text-gray-500 tracking-widest mb-1">Status</span>
+<span class="text-primary">Active</span>
+</div>
+</div>
+<div class="pt-4 border-t border-dashed border-gray-800 mt-4 flex justify-between items-center font-mono text-[10px] text-gray-500">
+<span>Last Signal: 00:17 ago</span>
+<span>Channel: Obsidian</span>
+</div>
+</div>
+<div class="reveal-text absolute inset-0 flex items-center justify-center pointer-events-none">
+<p class="text-primary uppercase tracking-[0.5em] text-xs font-bold animate-pulse">Data obeys silence.</p>
+</div>
+</div>
+</div>
+<div class="group relative hover-reveal cursor-crosshair">
+<div class="absolute -left-4 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="border-t border-gray-800 pt-6 transition-all duration-500 group-hover:border-primary">
+<div class="flex justify-between items-start mb-6 original-text">
+<span class="text-3xl font-light text-gray-600 group-hover:text-primary transition-colors">04</span>
+<span class="h-2 w-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"></span>
+</div>
+<div class="space-y-4 original-text">
+<div>
+<h3 class="text-xl uppercase tracking-[0.15em] text-white font-medium">ENTITY_04</h3>
+<p class="text-[10px] tracking-widest text-gray-500 uppercase mt-1">Code Name: SHADOW BROKER</p>
+</div>
+<div class="grid grid-cols-2 gap-4 text-sm font-light">
+<div>
+<span class="block text-[10px] uppercase text-gray-500 tracking-widest mb-1">Function</span>
+<span class="text-gray-300">Identity Erasure</span>
+</div>
+<div>
+<span class="block text-[10px] uppercase text-gray-500 tracking-widest mb-1">Status</span>
+<span class="text-primary">Active</span>
+</div>
+</div>
+<div class="pt-4 border-t border-dashed border-gray-800 mt-4 flex justify-between items-center font-mono text-[10px] text-gray-500">
+<span>Last Signal: 04:12 ago</span>
+<span>Channel: Deep</span>
+</div>
+</div>
+<div class="reveal-text absolute inset-0 flex items-center justify-center pointer-events-none">
+<p class="text-primary uppercase tracking-[0.5em] text-xs font-bold animate-pulse">Data obeys silence.</p>
+</div>
+</div>
+</div>
+<div class="group relative hover-reveal cursor-crosshair">
+<div class="absolute -left-4 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="border-t border-gray-800 pt-6 transition-all duration-500 group-hover:border-primary">
+<div class="flex justify-between items-start mb-6 original-text">
+<span class="text-3xl font-light text-gray-600 group-hover:text-primary transition-colors">05</span>
+<span class="h-2 w-2 rounded-full bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,0.6)]"></span>
+</div>
+<div class="space-y-4 original-text">
+<div>
+<h3 class="text-xl uppercase tracking-[0.15em] text-white font-medium">ENTITY_05</h3>
+<p class="text-[10px] tracking-widest text-gray-500 uppercase mt-1">Code Name: ECHO CHAMBER</p>
+</div>
+<div class="grid grid-cols-2 gap-4 text-sm font-light">
+<div>
+<span class="block text-[10px] uppercase text-gray-500 tracking-widest mb-1">Function</span>
+<span class="text-gray-300">Acoustic Surveillance</span>
+</div>
+<div>
+<span class="block text-[10px] uppercase text-gray-500 tracking-widest mb-1">Status</span>
+<span class="text-yellow-500">Dormant</span>
+</div>
+</div>
+<div class="pt-4 border-t border-dashed border-gray-800 mt-4 flex justify-between items-center font-mono text-[10px] text-gray-500">
+<span>Last Signal: --:--</span>
+<span>Channel: Silent</span>
+</div>
+</div>
+<div class="reveal-text absolute inset-0 flex items-center justify-center pointer-events-none">
+<p class="text-primary uppercase tracking-[0.5em] text-xs font-bold animate-pulse">Data obeys silence.</p>
+</div>
+</div>
+</div>
+<div class="group relative hover-reveal cursor-crosshair">
+<div class="absolute -left-4 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="border-t border-gray-800 pt-6 transition-all duration-500 group-hover:border-primary">
+<div class="flex justify-between items-start mb-6 original-text">
+<span class="text-3xl font-light text-gray-600 group-hover:text-primary transition-colors">06</span>
+<span class="h-2 w-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"></span>
+</div>
+<div class="space-y-4 original-text">
+<div>
+<h3 class="text-xl uppercase tracking-[0.15em] text-white font-medium">ENTITY_06</h3>
+<p class="text-[10px] tracking-widest text-gray-500 uppercase mt-1">Code Name: NEURAL SPIKE</p>
+</div>
+<div class="grid grid-cols-2 gap-4 text-sm font-light">
+<div>
+<span class="block text-[10px] uppercase text-gray-500 tracking-widest mb-1">Function</span>
+<span class="text-gray-300">Data Corruption</span>
+</div>
+<div>
+<span class="block text-[10px] uppercase text-gray-500 tracking-widest mb-1">Status</span>
+<span class="text-primary">Active</span>
+</div>
+</div>
+<div class="pt-4 border-t border-dashed border-gray-800 mt-4 flex justify-between items-center font-mono text-[10px] text-gray-500">
+<span>Last Signal: 00:03 ago</span>
+<span>Channel: Neural</span>
+</div>
+</div>
+<div class="reveal-text absolute inset-0 flex items-center justify-center pointer-events-none">
+<p class="text-primary uppercase tracking-[0.5em] text-xs font-bold animate-pulse">Data obeys silence.</p>
+</div>
+</div>
+</div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-16 text-[10px] uppercase tracking-[0.3em] text-gray-600 text-center">
+            Ten members are tools. One watches.
+        </div>
+    </div>
+</main>
+<footer class="border-t border-gray-900 bg-background-dark py-6 relative z-10">
+<div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-[10px] uppercase tracking-[0.2em] text-gray-600">
+<span>ALLSITEY SEES.</span>
+<span class="cursor-pointer hover:text-primary transition-colors" id="to-leader">Leader</span>
+</div>
+</footer>
+<script>
+        document.documentElement.classList.add('dark');
+        document.getElementById('to-eye').addEventListener('click', () => {
+            window.location.href = "../the_eye/code.html";
+        });
+        document.getElementById('to-access').addEventListener('click', () => {
+            window.location.href = "../access/code.html";
+        });
+        document.getElementById('to-leader').addEventListener('click', () => {
+            window.location.href = "../the_leader/code.html";
+        });
+    </script>
+
+</body></html>
+</body></html>

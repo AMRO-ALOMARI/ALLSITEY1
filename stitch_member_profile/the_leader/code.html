@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ALLSITEY – Leader</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#8B0000",
+                        "background-light": "#050505",
+                        "background-dark": "#000000",
+                        "silver-text": "#C0C0C0",
+                        "bone-white": "#EBEBEB",
+                    },
+                    fontFamily: {
+                        display: ["Montserrat", "sans-serif"],
+                    },
+                    letterSpacing: {
+                        widest: '.25em',
+                        superwide: '.4em',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-in': 'fadeIn 2s ease-out forwards',
+                        'glitch': 'glitch 1s linear infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                },
+            },
+        };
+    </script>
+<style>.vignette {
+            background: radial-gradient(circle, transparent 40%, rgba(0,0,0,0.8) 100%);
+        }.logo-blend {
+            mix-blend-mode: screen;}
+        .light .logo-blend {
+            filter: invert(1);mix-blend-mode: multiply;}.logo-image-container img {
+            transition: all 0.5s ease;
+        }.glitch-hover:hover {
+            text-shadow: 2px 0 #8B0000, -2px 0 #0000ff;
+        }
+    </style>
+</head>
+<body class="bg-background-dark min-h-screen flex flex-col items-center justify-center font-display overflow-hidden relative selection:bg-primary selection:text-white transition-colors duration-500">
+<div class="absolute inset-0 pointer-events-none z-0">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 dark:bg-primary/10 rounded-full blur-[120px] opacity-50 dark:opacity-40 animate-pulse-slow"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background-dark/90"></div>
+<div class="absolute inset-0 vignette pointer-events-none"></div>
+</div>
+<nav class="absolute top-0 w-full p-8 flex justify-between items-center z-20 text-[10px] tracking-[0.3em] uppercase text-gray-700">
+<span>Leader Channel: 011</span>
+<span class="cursor-pointer hover:text-primary transition-colors" id="to-eye">Return to the Eye</span>
+</nav>
+<main class="relative z-10 flex flex-col items-center justify-center w-full max-w-4xl px-6 text-center">
+<div class="logo-image-container mb-12 opacity-0 animate-fade-in">
+<div class="relative group cursor-pointer">
+<div class="absolute -inset-4 border border-gray-200 dark:border-gray-800 rounded-full opacity-0 scale-90 group-hover:scale-100 group-hover:opacity-100 transition-all duration-700 ease-out"></div>
+<div class="absolute -inset-1 border border-primary/30 rounded-full opacity-0 scale-95 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500 delay-100"></div>
+<img alt="The Eye of ALLSITEY" class="w-48 md:w-64 h-auto object-contain dark:mix-blend-screen mix-blend-multiply dark:invert-0 invert transition-transform duration-1000 group-hover:scale-105" src="screen.png"/>
+</div>
+</div>
+<div class="space-y-6 opacity-0 animate-[fadeIn_2s_ease-out_0.5s_forwards]">
+<h1 class="text-bone-white text-sm md:text-base tracking-superwide uppercase font-normal glitch-hover transition-all duration-300">
+                There is no eleventh member.
+</h1>
+<p class="text-silver-text text-xs md:text-sm tracking-widest uppercase font-light">
+                There is only the <span class="text-white font-semibold">Eye</span>.
+</p>
+</div>
+</main>
+<footer class="absolute bottom-0 w-full p-8 flex justify-between items-end z-20 text-[9px] tracking-[0.2em] text-gray-600 uppercase">
+<span class="text-primary animate-pulse">Status: Watching</span>
+<span>ALLSITEY SEES.</span>
+</footer>
+<script>
+             document.documentElement.classList.add('dark');
+        document.getElementById('to-eye').addEventListener('click', () => {
+            window.location.href = "../the_eye/code.html";
+        });
+    </script>
+
+</body></html>

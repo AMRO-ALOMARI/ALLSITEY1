@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ALLSITEY – The Collective</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&amp;family=Playfair+Display:ital,wght@1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#8B0000",
+                        "background-light": "#050505",
+                        "background-dark": "#000000",
+                        "ivory": "#FFFFF0",
+                        "silver": "#C0C0C0",
+                        "dark-red": "#500000"
+                    },
+                    fontFamily: {
+                        display: ["Montserrat", "sans-serif"],
+                        serif: ["Playfair Display", "serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0px", // Sharp edges for a stricter, military/intelligence feel
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'glitch': 'glitch 1s linear infinite',
+                    },
+                    keyframes: {
+                        glitch: {
+                            '2%, 64%': { transform: 'translate(2px,0) skew(0deg)' },
+                            '4%, 60%': { transform: 'translate(-2px,0) skew(0deg)' },
+                            '62%': { transform: 'translate(0,0) skew(5deg)' },
+                        }
+                    }
+                },
+            },
+        };
+    </script>
+<style>body {
+    cursor: none;}
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(255, 255, 240, 0.5);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, background-color 0.3s
+    }
+.custom-cursor::after {
+    content: "";
+    width: 4px;
+    height: 4px;
+    background: #8B0000;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+    }.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1));
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0.3
+    }.noise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 40;
+    opacity: 0.03;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuClxVUNGAFDNyurHSiNzTUMOG-auW25KmW6WsdQvs8nwrqiRHsrYl7Xa4PIasVAkjgP6kmOaNQ40n7e_IsNKYBo7eEavA50qKjomA_D7tpwuM2MxjRDoKZEJ0aqofLw-BCRoMhw_fBD1RHjgJwRg4vCZkmPoMWIKQc3H-UmO4kPDRb-a31NwteHrVpdyeseMRX-9Inm0z7S77y1HqYOjOfDFxXG_lQM0XY7mlEoRzp03W0SU7soSHpU08LwicPJqSvBpIxEWDnmCos)
+    }
+.reveal-text {
+    position: relative;
+    overflow: hidden
+    }
+.reveal-text::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    animation-delay: 0.5s
+    }
+@keyframes reveal {
+    0% {
+        width: 100%;
+        } 100% {
+        width: 0%;
+        }
+    }
+.hover-red:hover {
+    color: #8B0000;
+    text-shadow: 0 0 8px rgba(139, 0, 0, 0.6)
+    }</style>
+</head>
+<body class="bg-background-dark text-ivory font-display min-h-screen overflow-x-hidden selection:bg-dark-red selection:text-white transition-colors duration-500">
+<div class="custom-cursor hidden md:block" id="cursor"></div>
+<div class="scanlines"></div>
+<div class="noise"></div>
+<nav class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center mix-blend-difference text-ivory text-[10px]">
+<div class="flex items-center gap-4">
+<span class="material-icons text-sm opacity-50 animate-pulse">lens</span>
+<span class="text-xs tracking-[0.3em] uppercase opacity-80">System Secure</span>
+</div>
+<div class="hidden md:flex gap-12 text-xs tracking-[0.2em] font-light">
+<span class="opacity-40">NO MENU</span>
+</div>
+<div class="md:hidden text-ivory text-[9px] uppercase tracking-[0.3em] opacity-40">
+                Scroll. Hover. Obey.
+            </div>
+</nav>
+<main class="relative z-10 min-h-screen flex flex-col items-center justify-center p-6 md:p-12">
+<div class="mb-16 md:mb-24 relative group">
+<div class="absolute -inset-10 bg-primary/20 rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-1000"></div>
+<img alt="ALLSITEY Eye" class="w-24 md:w-32 h-auto mx-auto invert dark:invert-0 transition-transform duration-700 hover:scale-105 opacity-90 hover:opacity-100 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]" src="screen.png"/>
+</div>
+<div class="mb-12 text-center">
+<h1 class="reveal-text text-4xl md:text-6xl font-light tracking-[0.3em] uppercase text-silver mb-4">
+                THE COLLECTIVE
+            </h1>
+<div class="h-px w-24 mx-auto bg-primary"></div>
+</div>
+<div class="max-w-4xl mx-auto text-center space-y-8 relative">
+<div class="absolute -left-8 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/50 to-transparent hidden md:block"></div>
+<div class="absolute -right-8 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/50 to-transparent hidden md:block"></div>
+<p class="text-lg md:text-xl font-light leading-relaxed tracking-widest text-gray-300">
+<span class="font-bold text-white">ALLSITEY</span> is a closed intelligence structure.
+            </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 my-12 items-center justify-center">
+<div class="text-right border-r border-gray-800 pr-8 md:border-r md:border-primary/30 py-4 transition-all duration-500 hover:border-primary">
+<span class="block text-3xl md:text-5xl font-extralight mb-2 text-primary">10</span>
+<span class="text-xs tracking-[0.4em] uppercase text-gray-500">Entities Execute</span>
+</div>
+<div class="text-left pl-8 py-4">
+<span class="block text-3xl md:text-5xl font-extralight mb-2 text-ivory">01</span>
+<span class="text-xs tracking-[0.4em] uppercase text-gray-500">Entity Decides</span>
+</div>
+</div>
+<div class="space-y-4 pt-4">
+<p class="text-sm md:text-base tracking-[0.25em] text-gray-400 uppercase hover-red transition-colors duration-300 cursor-default">
+                    No Democracy.
+                </p>
+<p class="text-sm md:text-base tracking-[0.25em] text-gray-400 uppercase hover-red transition-colors duration-300 cursor-default">
+                    No Consensus.
+                </p>
+<p class="text-lg md:text-xl tracking-[0.4em] font-semibold text-primary uppercase animate-pulse-slow">
+                    Only Alignment.
+                </p>
+</div>
+</div>
+<div class="fixed top-1/4 left-10 w-64 h-64 border border-gray-800/30 rounded-full mix-blend-overlay -z-10 animate-spin" style="animation-duration: 60s;"></div>
+<div class="fixed bottom-1/4 right-10 w-96 h-96 border border-primary/10 rounded-full mix-blend-overlay -z-10 animate-pulse-slow"></div>
+</main>
+<footer class="fixed bottom-0 w-full px-8 py-4 bg-background-dark/90 backdrop-blur-sm border-t border-gray-900 flex justify-between items-end text-[10px] md:text-xs uppercase tracking-[0.15em] text-gray-500 z-40">
+<div class="flex flex-col gap-1">
+<span>Members: 10</span>
+<span>Decider: 1</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-icons text-primary text-base animate-pulse">visibility</span>
+<span>Observation Active</span>
+</div>
+<div class="text-right flex flex-col gap-1">
+<span class="cursor-pointer hover:text-primary transition-colors" id="to-members">Members</span>
+<span class="cursor-pointer hover:text-primary transition-colors" id="to-leader">Leader</span>
+</div>
+</footer>
+<script>
+        // Custom Cursor Logic
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+        // Hover effect for links to expand cursor
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.style.width = '50px';
+                cursor.style.height = '50px';
+                cursor.style.borderColor = '#8B0000';
+                cursor.style.backgroundColor = 'rgba(139, 0, 0, 0.1)';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.style.width = '20px';
+                cursor.style.height = '20px';
+                cursor.style.borderColor = 'rgba(255, 255, 240, 0.5)';
+                cursor.style.backgroundColor = 'transparent';
+            });
+        });
+
+        // Silent navigation
+        document.getElementById('to-members').addEventListener('click', () => {
+            window.location.href = "../member_profile/code.html";
+        });
+        document.getElementById('to-leader').addEventListener('click', () => {
+            window.location.href = "../the_leader/code.html";
+        });
+    </script>
+
+</body></html>

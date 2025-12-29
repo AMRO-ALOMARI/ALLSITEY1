@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ALLSITEY – The Eye</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&amp;family=Syne:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#8B0000",
+                        "background-light": "#050505",
+                        "background-dark": "#000000",
+                        "silver": "#C0C0C0",
+                    },
+                    fontFamily: {
+                        display: ["Syne", "sans-serif"],
+                        body: ["Montserrat", "sans-serif"],
+                    },
+                    letterSpacing: {
+                        'widest-custom': '0.25em',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'glitch': 'glitch 5s infinite',
+                    },
+                    keyframes: {
+                        glitch: {
+                            '0%, 90%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+                            '91%': { opacity: '0', transform: 'scale(0.9) skew(10deg)' },
+                            '92%': { opacity: '0.8', transform: 'translateX(-5px)' },
+                            '93%': { opacity: '0' },
+                            '94%': { opacity: '0.4', transform: 'scale(1)' },
+                        }
+                    }
+                },
+            },
+        };
+    </script>
+<style>body {
+            cursor: crosshair;
+        }body, .bg-transition {
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }.light-mode-invert {
+            filter: invert(1);
+            mix-blend-mode: multiply;
+        }
+        .dark-mode-blend {
+            mix-blend-mode: screen;
+        }
+        .eye-container {
+            transition: transform 0.1s ease-out;
+            will-change: transform;
+        }::selection {
+            background: #8B0000;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-silver font-body overflow-hidden h-screen w-screen flex flex-col relative selection:bg-primary selection:text-white">
+<div class="absolute inset-0 z-0 opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+<nav class="absolute top-0 w-full z-50 p-8 flex justify-between items-center uppercase tracking-widest text-[10px] pointer-events-none">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+<span class="font-semibold opacity-60">Observation Channel: Open</span>
+</div>
+<div class="flex items-center gap-6">
+<span class="opacity-40">SUBJECT: ONLINE</span>
+</div>
+</nav>
+<main class="relative z-10 flex-grow flex items-center justify-center w-full h-full perspective-1000">
+<div class="absolute z-0 w-[40rem] h-[40rem] flex items-center justify-center pointer-events-none opacity-40 select-none" id="eye-wrapper">
+<img alt="The Eye of ALLSITEY" class="w-full h-full object-contain dark:mix-blend-screen mix-blend-multiply dark:opacity-80 opacity-60 dark:invert-0 invert animate-glitch" id="eye-graphic" src="screen.png"/>
+</div>
+<div class="relative z-20 max-w-2xl px-8 text-center mix-blend-normal">
+<h1 class="font-display font-bold text-6xl md:text-8xl tracking-tighter mb-12 opacity-90 text-white">
+                THE EYE
+            </h1>
+<div class="space-y-8 backdrop-blur-sm p-4 rounded-lg">
+<p class="text-sm md:text-lg uppercase tracking-widest-custom leading-loose font-light border-l-2 border-primary pl-6 text-left text-gray-300">
+                    The Eye is not a symbol. <br/>
+                    It is awareness without permission. <br/>
+                    It does not sleep. <br/>
+                    It does not forget. <br/>
+                    It does not forgive patterns.
+                </p>
+<p class="text-xs md:text-sm uppercase tracking-[0.3em] font-medium text-primary mt-8 text-right">
+                    You don’t interact with the Eye. <br/>
+<span class="text-white">You are processed by it.</span>
+</p>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 w-full h-32 z-10 pointer-events-none flex justify-between items-end px-8 pb-8">
+<div class="h-px w-1/3 bg-gradient-to-r from-primary to-transparent opacity-50"></div>
+<div class="h-px w-1/3 bg-gradient-to-l from-primary to-transparent opacity-50"></div>
+</div>
+</main>
+<footer class="absolute bottom-0 w-full z-50 p-6 flex justify-between items-end text-[10px] uppercase tracking-widest opacity-40 font-mono">
+<div class="flex flex-col gap-1">
+<span>Pointer: <span id="coords">00.00 / 00.00</span></span>
+<span>Sector: OBS-7G</span>
+</div>
+<div class="flex flex-col gap-1 text-right">
+<span class="cursor-pointer hover:text-primary transition-colors" id="to-collective">The Collective</span>
+<span class="cursor-pointer hover:text-primary transition-colors" id="to-access">Access</span>
+</div>
+</footer>
+<script>
+        const eyeWrapper = document.getElementById('eye-wrapper');
+        const eyeGraphic = document.getElementById('eye-graphic');
+        const coordsDisplay = document.getElementById('coords');
+        // Track mouse movement
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX;
+            const y = e.clientY;
+            // Update coordinates display
+            coordsDisplay.textContent = `${x.toFixed(2)} / ${y.toFixed(2)}`;
+            // Calculate center of screen
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+            // Calculate offset (how far mouse is from center)
+            // Divided by factor to control sensitivity (higher number = less movement)
+            const moveX = (x - centerX) / 15; 
+            const moveY = (y - centerY) / 15;
+            // Rotate based on position (3D effect)
+            const rotateX = (y - centerY) / 50; // Tilt up/down
+            const rotateY = (centerX - x) / 50; // Tilt left/right
+            // Apply transformation to the wrapper (moves the position)
+            // Using translate3d for better performance
+            eyeWrapper.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
+            // Apply slight rotation to the image itself for depth
+            eyeGraphic.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+        // Occasional Random "Jitter" or Look Away
+        setInterval(() => {
+            if (Math.random() > 0.8) {
+                const randomX = (Math.random() - 0.5) * 50;
+                const randomY = (Math.random() - 0.5) * 50;
+                eyeWrapper.style.transition = "transform 0.05s linear";
+                eyeWrapper.style.transform = `translate3d(${randomX}px, ${randomY}px, 0)`;
+                // Reset back to tracking after a split second
+                setTimeout(() => {
+                    eyeWrapper.style.transition = "transform 0.1s ease-out";
+                }, 100);
+            }
+        }, 2000);
+
+        // Silent navigation hints
+        document.getElementById('to-collective').addEventListener('click', () => {
+            window.location.href = "../the_collective/code.html";
+        });
+        document.getElementById('to-access').addEventListener('click', () => {
+            window.location.href = "../access/code.html";
+        });
+    </script>
+
+</body></html>

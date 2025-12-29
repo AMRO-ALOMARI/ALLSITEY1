@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACCESS | ALLSITEY</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem;">
+        <div style="max-width: 600px; text-align: center;">
+            <!-- Text -->
+            <div style="margin-bottom: 4rem;">
+                <p style="font-size: 0.9rem; letter-spacing: 0.2em; line-height: 2; margin-bottom: 1rem; opacity: 0.8;">
+                    Access is not requested.
+                </p>
+                <p style="font-size: 0.95rem; letter-spacing: 0.2em;">
+                    It is granted retroactively.
+                </p>
+            </div>
+            
+            <!-- Form -->
+            <form onsubmit="handleAccessSubmit(event); return false;" style="margin-top: 3rem;">
+                <input 
+                    type="text" 
+                    id="identifier" 
+                    class="input-field" 
+                    placeholder="[ ENTER IDENTIFIER ]" 
+                    required
+                    style="margin-bottom: 2rem;"
+                />
+                
+                <button type="submit" class="btn-primary" style="margin-bottom: 1rem;">
+                    SUBMIT TO OBSERVATION
+                </button>
+                
+                <div id="status-message" style="font-size: 0.75rem; letter-spacing: 0.2em; color: var(--dark-blood); opacity: 0; transition: opacity 0.5s ease; min-height: 1.5rem;">
+                    Identifier recorded.
+                </div>
+            </form>
+        </div>
+    </main>
+    
+    <!-- Hidden Navigation -->
+    <div class="hover-zone" style="top: 0; left: 0; width: 20%; height: 100%;" data-nav="the-eye.html"></div>
+    
+    <footer>
+        ALLSITEY SEES.
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
