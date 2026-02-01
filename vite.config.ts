@@ -1,13 +1,7 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: "/ALLSITEY/",   // 
+  base: './', // مهم للنشر على GitHub Pages
   plugins: [react()],
-  build: {
-    outDir: "dist",
-    rollupOptions: {
-      input: "index.html",
-    },
-  },
-});
+})
